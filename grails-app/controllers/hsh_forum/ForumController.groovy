@@ -44,7 +44,7 @@ class ForumController {
         Document documentInstance = Document.get(id)
         if ( documentInstance == null) {
             flash.message = "Document not found."
-            redirect (action:'list')
+            // redirect (action:'list')
         } else {
             response.setContentType("APPLICATION/OCTET-STREAM")
             response.setHeader("Content-Disposition", "Attachment;Filename=\"${documentInstance.filename}\"")

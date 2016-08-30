@@ -9,29 +9,29 @@
         <div class="pagination">
             <g:paginate total="${numberOfThreads}" params="${[topicId:topic.id]}"/>
         </div>
-        <div class="section">
-            <div class="sectionTitle">
+        <div class="panel panel-success">
+            <div class="panel-heading">
                 ${topic.title}
                 <span class="topicDesc">${topic.description}</span>
             </div>
         </div>
-        <g:each var="thread" in="${threads}">
-            <div class="topic">
-                <g:link controller="forum" action="thread" params="[threadId:thread.id]">${thread.subject}
-                </g:link>
-                <div class="rightInfo">
-                    <b>replies</b>: ${thread.numberOfReplies}
-                </div>
-                <div>
-                    Started by: ${thread.opener.username}
-                    <br>
-                        on:
-                        <g:formatDate date="${thread.createDate}" format="dd MMM yyyy"/>
+        <div class="list-group">
+            <g:each var="thread" in="${threads}">
+                <div class="list-group-item">
+                    <g:link controller="forum" action="thread" params="[threadId:thread.id]">${thread.subject}
+                    </g:link>
+                    <div class="rightInfo">
+                        <b>replies</b>: ${thread.numberOfReplies}
+                    </div>
+                    <div>
+                        Started by: ${thread.opener.username} on:
+                        <g:formatDate date="${thread.createDate}" format="dd MMM yyyy"></g:formatDate>
                     </div>
                 </div>
             </g:each>
-            <div class="pagination">
-                <g:paginate total="${numberOfThreads}" params="${[topicId:topic.id]}"/>
-            </div>
-        </body>
-    </html>
+        </div>
+        <div class="pagination">
+            <g:paginate total="${numberOfThreads}" params="${[topicId:topic.id]}"/>
+        </div>
+    </body>
+</html>
