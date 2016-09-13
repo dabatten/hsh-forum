@@ -582,7 +582,7 @@ img.grails-logo {
 .sectionTitle {
     font-weight: bold;
     padding: 5px 5px 5px 5px;
-    background-color: #e0e0ff;
+    /*background-color: #e0e0ff;*/
     border-bottom: 1px solid #888;
 }
 
